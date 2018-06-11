@@ -1,5 +1,6 @@
 # todoKubernetes
 [todo application](https://todo-cloud.herokuapp.com/) deploy using docker container and managed with kubernetes.
+
 **Source Code of the application** [joy-software/TODO](https://github.com/joy-software/TODO)
 
 ## Requirements
@@ -19,7 +20,7 @@ To use test the deployment using docker and kubernetes, you have to:
 1. Start minkube
 
 2. Deploy the app
-    - **Using Docker-compose **
+    - **Using Docker-compose**
       - Download the project
       - Go to the Root directory
       - Exectute the command: ```sudo docker-compose up –d```
