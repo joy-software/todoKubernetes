@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  php:
+    build: 
+      context: ./docker/php
+    image: joyndjama/todo_php
+    ports:
+      - '8000:80'
+    restart: always
+    depends_on:
+      - db
+  db:
+    build:
+      context: ./docker/mysql
+    image: joyndjama/todo_db
+    volumes:
+       - dbdata:/var/lib/mysql
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=todoapproot
+      - MYSQL_DATABASE=dbapp
+      - MYSQL_USER=todo
+      - MYSQL_PASSWORD=todoappbd
+volumes:
+    dbdata:

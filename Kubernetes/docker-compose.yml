@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  php:
+    image: joyndjama/todo_php
+    deploy:
+      replicas: 3
+    ports:
+      - '8000:80'
+    restart: always
+    depends_on:
+      - db
+    labels:
+      kompose.service.type: LoadBalancer
+  db:
+    image: joyndjama/todo_db
+    deploy:
+      replicas: 1
+    volumes:
+       - dbdata:/var/lib/mysql
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=todoapproot
+      - MYSQL_DATABASE=dbapp
+      - MYSQL_USER=todo
+      - MYSQL_PASSWORD=todoappbd
+volumes:
+    dbdata:
