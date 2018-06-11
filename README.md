@@ -26,7 +26,7 @@ To use test the deployment using docker and kubernetes, you have to:
       - Two containers must be created, to check that both containers are created, type the command  ```sudo docker ps ```
       - To view the aplication just connect to (localhost:8000/app)
      
-     - **Using kompose**
+   - **Using kompose**
       - Download the project
       - Go to the directory called "kubernetes"
       - Exectute the command: ```sudo kompose convert ```
